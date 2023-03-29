@@ -12,6 +12,16 @@ class DetailView extends StatefulWidget {
 }
 
 class _DetailViewState extends State<DetailView> {
+  @override
+  void initState() {
+    setState(() {
+      widget.newsUrl = widget.newsUrl.contains('http:')
+          ? widget.newsUrl.replaceAll("http:", "https:")
+          : widget.newsUrl;
+    });
+    super.initState();
+  }
+
   final Completer<WebViewController> controller =
       Completer<WebViewController>();
   @override

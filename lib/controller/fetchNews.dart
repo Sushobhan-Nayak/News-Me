@@ -22,7 +22,6 @@ class FetchNews {
   static Future<NewsArt> fetchNews() async {
     final random = Random();
     var element = sourceId[random.nextInt(sourceId.length)];
-    print(element);
     Response response = await get(Uri.parse(
         'https://newsapi.org/v2/top-headlines?sources=$element&apiKey=d696787707d94908b052c0018bf40b79'));
     Map bodyData = jsonDecode(response.body);

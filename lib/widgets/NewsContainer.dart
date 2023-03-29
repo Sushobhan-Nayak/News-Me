@@ -26,8 +26,11 @@ class NewsContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.network(
-            imageUrl,
+          FadeInImage(
+            fadeOutDuration: Duration(milliseconds: 100),
+            fadeInDuration: Duration(milliseconds: 200),
+            placeholder: AssetImage('assets/images/loading.gif'),
+            image: NetworkImage(imageUrl),
             height: 300,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
